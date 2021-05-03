@@ -1,4 +1,6 @@
 var message = ""
+
+// to avoid redundant calculation, variable i is tested in this block
 for(let i=2, isNumber=true;;)
 {
     for(let j=0; j<process.argv[i].length; j++)
@@ -24,18 +26,25 @@ for(let i=2, isNumber=true;;)
         }   else if(process.argv[i][j] == '9'){
             message += "Nine";
         }   else {
-            message = "Please enter NUMBERS as arguments";
+            // This is for Test
             console.log(i,j);
             console.log(process.argv[i][j]);
+            // --- Test end
+
+            // if argument is not number, 
+            message = "Please enter NUMBERS as arguments";
             isNumber = false;
             break;
         }    
     }
 
+    // The case of the arguments are not numbers
     if(!isNumber){
         break;
     }
 
+
+    // i is tested here
     if(++i < process.argv.length){
         message += ",";
     } else {
@@ -43,6 +52,7 @@ for(let i=2, isNumber=true;;)
     }
 }
 
+// print message
 if(message == ""){
     console.log("Please enter arguments.");
 } else{
