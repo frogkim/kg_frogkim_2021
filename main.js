@@ -26,11 +26,6 @@ for(let i=2, isNumber=true;;)
         }   else if(process.argv[i][j] == '9'){
             message += "Nine";
         }   else {
-            // This is for Test
-            console.log(i,j);
-            console.log(process.argv[i][j]);
-            // --- Test end
-
             // if argument is not number, 
             message = "Please enter NUMBERS as arguments";
             isNumber = false;
